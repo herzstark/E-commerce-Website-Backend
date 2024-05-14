@@ -4,7 +4,9 @@ import com.herzstark.ecommerce.dtos.UserRegisterDTO;
 import com.herzstark.ecommerce.entities.User;
 import com.herzstark.ecommerce.mapper.Mapper;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserRegisterMapper extends Mapper<User, UserRegisterDTO> {
 
 

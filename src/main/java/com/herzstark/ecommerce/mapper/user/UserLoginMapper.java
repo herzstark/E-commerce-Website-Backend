@@ -3,7 +3,9 @@ package com.herzstark.ecommerce.mapper.user;
 import com.herzstark.ecommerce.dtos.UserLoginDTO;
 import com.herzstark.ecommerce.entities.User;
 import com.herzstark.ecommerce.mapper.Mapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserLoginMapper extends Mapper<User, UserLoginDTO> {
 
     @Override
