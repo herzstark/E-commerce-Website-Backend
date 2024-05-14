@@ -1,7 +1,10 @@
 package com.herzstark.ecommerce.controller;
 
 
+import com.herzstark.ecommerce.dtos.UserLoginDTO;
+import com.herzstark.ecommerce.dtos.UserRegisterDTO;
 import com.herzstark.ecommerce.entities.User;
+import com.herzstark.ecommerce.mapper.Mapper;
 import com.herzstark.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,10 +18,21 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private Mapper<User, UserRegisterDTO> mapper;
 
-    @PostMapping("/user")
-    public ResponseEntity<User> createUser(@RequestBody User user){
-        return new ResponseEntity<>(userService.create(user), HttpStatus.CREATED);
+    @PostMapping("/user/register")
+    public ResponseEntity<User> registerUser(@RequestBody UserRegisterDTO userRegisterDTO){
+
+        return new ResponseEntity<>(userService.register(mapper.mapFrom(userRegisterDTO)),HttpStatus.CREATED);
+    }
+
+    @PostMapping("/user/login")
+    public ResponseEntity<User> loginUser(@RequestBody UserLoginDTO userLoginDTO){
+        String userPassword = userLoginDTO.getPassword();
+        String username = userLoginDTO.getUsername();
+
+        return new ResponseEntity<>(userService.login(username,userPassword).get(), HttpStatus.OK);
     }
 
     @GetMapping("/user/{id}")
