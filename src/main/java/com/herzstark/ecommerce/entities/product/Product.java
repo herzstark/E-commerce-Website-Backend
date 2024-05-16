@@ -1,6 +1,7 @@
-package com.herzstark.ecommerce.entities;
+package com.herzstark.ecommerce.entities.product;
 
 
+import com.herzstark.ecommerce.entities.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

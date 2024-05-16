@@ -1,10 +1,9 @@
 package com.herzstark.ecommerce.controller;
 
-import com.herzstark.ecommerce.entities.Product;
+import com.herzstark.ecommerce.entities.product.Product;
 import com.herzstark.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

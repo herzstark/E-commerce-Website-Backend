@@ -1,6 +1,6 @@
 package com.herzstark.ecommerce.service;
 
-import com.herzstark.ecommerce.entities.User;
+import com.herzstark.ecommerce.entities.user.User;
 
 import java.util.Optional;
 
