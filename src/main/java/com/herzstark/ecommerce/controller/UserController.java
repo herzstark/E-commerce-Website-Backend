@@ -3,7 +3,7 @@ package com.herzstark.ecommerce.controller;
 
 import com.herzstark.ecommerce.dtos.UserLoginDTO;
 import com.herzstark.ecommerce.dtos.UserRegisterDTO;
-import com.herzstark.ecommerce.entities.User;
+import com.herzstark.ecommerce.entities.user.User;
 import com.herzstark.ecommerce.mapper.Mapper;
 import com.herzstark.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

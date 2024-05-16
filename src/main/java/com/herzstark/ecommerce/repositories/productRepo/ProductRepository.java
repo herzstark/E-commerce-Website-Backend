@@ -1,6 +1,6 @@
-package com.herzstark.ecommerce.repositories;
+package com.herzstark.ecommerce.repositories.productRepo;
 
-import com.herzstark.ecommerce.entities.Product;
+import com.herzstark.ecommerce.entities.product.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

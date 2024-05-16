@@ -1,7 +1,7 @@
 package com.herzstark.ecommerce.service;
 
 
-import com.herzstark.ecommerce.entities.Product;
+import com.herzstark.ecommerce.entities.product.Product;
 
 import java.util.Optional;
 

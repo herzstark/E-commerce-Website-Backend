@@ -1,7 +1,7 @@
 package com.herzstark.ecommerce.mapper.user;
 
 import com.herzstark.ecommerce.dtos.UserLoginDTO;
-import com.herzstark.ecommerce.entities.User;
+import com.herzstark.ecommerce.entities.user.User;
 import com.herzstark.ecommerce.mapper.Mapper;
 import org.springframework.stereotype.Component;
 

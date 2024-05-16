@@ -1,7 +1,7 @@
 package com.herzstark.ecommerce.service.impl;
 
-import com.herzstark.ecommerce.entities.User;
-import com.herzstark.ecommerce.repositories.UserRepository;
+import com.herzstark.ecommerce.entities.user.User;
+import com.herzstark.ecommerce.repositories.userRepo.UserRepository;
 import com.herzstark.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

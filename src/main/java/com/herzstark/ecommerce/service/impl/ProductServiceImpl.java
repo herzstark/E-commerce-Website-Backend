@@ -1,7 +1,7 @@
 package com.herzstark.ecommerce.service.impl;
 
-import com.herzstark.ecommerce.entities.Product;
-import com.herzstark.ecommerce.repositories.ProductRepository;
+import com.herzstark.ecommerce.entities.product.Product;
+import com.herzstark.ecommerce.repositories.productRepo.ProductRepository;
 import com.herzstark.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
