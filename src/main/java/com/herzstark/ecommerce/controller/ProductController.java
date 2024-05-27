@@ -15,12 +15,12 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/product")
+    @PostMapping("/private/product")
     public ResponseEntity<Product> createProduct(@RequestBody Product product){
         return new ResponseEntity<>(productService.create(product), HttpStatus.CREATED);
     }
 
-    @GetMapping("/product/{id}")
+    @GetMapping("/public/product/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable Long id){
         Optional<Product> optionalProduct = productService.findByID(id);
 
@@ -30,14 +30,14 @@ public class ProductController {
         return new ResponseEntity<Product>(optionalProduct.get(),HttpStatus.OK);
     }
 
-    @PutMapping("/product/{id}")
+    @PutMapping("/private/product/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id ,@RequestBody Product product){
         product.setId(id);
 
         return new ResponseEntity<>(productService.update(product),HttpStatus.OK);
     }
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/private/product/{id}")
     public ResponseEntity deleteProduct(@PathVariable Long id){
         productService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
