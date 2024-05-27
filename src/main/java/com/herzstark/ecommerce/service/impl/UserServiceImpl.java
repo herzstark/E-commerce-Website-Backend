@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> login(String username, String password) {
 
-        Optional<User> userOptional = userRepository.getUserByUsername(username);
+        Optional<User> userOptional = userRepository.findByUsername(username);
         if(userOptional.isEmpty())
             throw new RuntimeException();
 

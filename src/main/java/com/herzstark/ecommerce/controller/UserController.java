@@ -21,13 +21,13 @@ public class UserController {
     @Autowired
     private Mapper<User, UserRegisterDTO> mapper;
 
-    @PostMapping("/user/register")
+    @PostMapping("/public/user/register")
     public ResponseEntity<User> registerUser(@RequestBody UserRegisterDTO userRegisterDTO){
 
         return new ResponseEntity<>(userService.register(mapper.mapFrom(userRegisterDTO)),HttpStatus.CREATED);
     }
 
-    @PostMapping("/user/login")
+    @PostMapping("/public/user/login")
     public ResponseEntity<User> loginUser(@RequestBody UserLoginDTO userLoginDTO){
         String userPassword = userLoginDTO.getPassword();
         String username = userLoginDTO.getUsername();
@@ -35,7 +35,7 @@ public class UserController {
         return new ResponseEntity<>(userService.login(username,userPassword).get(), HttpStatus.OK);
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/public/user/{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") Long id){
 
         Optional<User> optionalUser = userService.findByID(id);
@@ -44,12 +44,12 @@ public class UserController {
         }
         return new ResponseEntity<>(optionalUser.get(),HttpStatus.OK);
     }
-    @PutMapping("/user/{id}")
+    @PutMapping("/private/user/{id}")
     public ResponseEntity<User> updateUser(@PathVariable("id") Long id ,@RequestBody User user){
         user.setId(id);
         return new ResponseEntity<>(userService.update(user),HttpStatus.OK);
     }
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/private/user/{id}")
     public ResponseEntity deleteUser(@PathVariable("id") Long id){
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
